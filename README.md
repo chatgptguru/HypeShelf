@@ -56,7 +56,7 @@ Alternatively, you can call the `users:setRole` mutation (e.g. from Convex Dashb
 
 - **Auth:** All mutations that modify data require a signed-in user; identity comes from Clerk via JWT.
 - **RBAC:** Delete and “Staff Pick” are enforced in Convex: only the author or an admin can delete; only admins can set Staff Pick.
-- **Public read:** `recommendations.listLatest` and `recommendations.list` are public (read-only). Writes go through authenticated mutations with role checks.
+- **Public read:** Only `recommendations.listLatest` is public (read-only), used for the home page. `recommendations.list` requires auth and powers the all-hypes page (filtering, pagination). Writes go through authenticated mutations with role checks.
 
 ## Project structure
 
